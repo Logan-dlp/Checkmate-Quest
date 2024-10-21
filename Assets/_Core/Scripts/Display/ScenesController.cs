@@ -6,9 +6,9 @@ namespace Display
 {
     public class ScenesController : MonoBehaviour
     {
-        public static void LoadScene(SceneAsset scene)
+        public static void LoadScene(string sceneName)
         {
-            SceneManager.LoadScene(scene.name);
+            SceneManager.LoadScene(sceneName);
         }
         
         public static void QuitGame()
