@@ -20,7 +20,7 @@ namespace Multiplayer
                     NetworkManager.Singleton.StartHost();
                     break;
                 case Socket.Client:
-                    NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("172.28.240.1" /*$"{_personalSocket.IpTarget}"*/, 7777);
+                    NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("192.168.1.88" /*$"{_personalSocket.IpTarget}"*/, 7777);
                     NetworkManager.Singleton.StartClient();
                     break;
             }
