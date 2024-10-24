@@ -2,6 +2,7 @@ using System;
 using Event;
 using Event.Listener;
 using Multiplayer;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -10,6 +11,9 @@ namespace Player
     public class PlayerBehaviour : NetworkBehaviour
     {
         [SerializeField] private PersonalSocket _personalSocket;
+        [SerializeField] private TextMeshProUGUI _socketText;
+        [SerializeField] private TextMeshProUGUI _playerEventText;
+        [SerializeField] private TextMeshProUGUI _isMyTurnText;
     
         [Header("White Player")]
         [SerializeField] private Vector3 _whitePlayerTransform;
@@ -20,8 +24,8 @@ namespace Player
         [SerializeField] private Vector3 _blackPlayerTransform;
         [SerializeField] private LayerMask _blackPlayerCullingMask;
         [SerializeField] private ActionEvent _blackPlayerEvent;
-    
-        public NetworkVariable<bool> _isMyTurn = new NetworkVariable<bool>(false);
+
+        private bool _isMyTurn = false;
 
         private void Start()
         {
@@ -32,37 +36,47 @@ namespace Player
                     case Socket.Host:
                         transform.position = _whitePlayerTransform;
                         transform.GetComponentInChildren<Camera>().cullingMask = _whitePlayerCullingMask;
-                        actionEventListener.ActionEvent = _whitePlayerEvent;
-                        _isMyTurn.Value = true;
+                        actionEventListener.SetEvent(_whitePlayerEvent);
+                        _isMyTurn = true;
                         break;
                     case Socket.Client:
                         transform.position = _blackPlayerTransform;
                         transform.GetComponentInChildren<Camera>().cullingMask = _blackPlayerCullingMask;
-                        actionEventListener.ActionEvent = _blackPlayerEvent;
-                        _isMyTurn.Value = false;
+                        actionEventListener.SetEvent(_blackPlayerEvent);
+                        _isMyTurn = false;
                         break;
                 }
+
+                _socketText.text = _personalSocket.PersonalSocketType.ToString();
+                _playerEventText.text = actionEventListener.ActionEvent.ToString();
+                _isMyTurnText.text = _isMyTurn.ToString();
             }
+        }
+
+        private void Update()
+        {
+            _isMyTurnText.text = _isMyTurn.ToString();
         }
 
         public void ToggleTurn()
         {
-            _isMyTurn.Value = !_isMyTurn.Value;
+            _isMyTurn = !_isMyTurn;
         }
         
         public void PlayerClick()
         {
-            if (_isMyTurn.Value)
+            if (_isMyTurn)
             {
                 if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100))
                 {
                     Destroy(hit.transform.gameObject);
-                    SendTurn();
+                    SendTurnRpc();
                 }
             }
         }
         
-        private void SendTurn()
+        [Rpc(SendTo.ClientsAndHost)]
+        private void SendTurnRpc()
         {
             _whitePlayerEvent.InvokeEvent();
             _blackPlayerEvent.InvokeEvent();
