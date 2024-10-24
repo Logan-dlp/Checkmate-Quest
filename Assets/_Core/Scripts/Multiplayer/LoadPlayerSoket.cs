@@ -16,10 +16,10 @@ namespace Multiplayer
                     NetworkManager.Singleton.StartServer();
                     break;
                 case Socket.Host:
-                    NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("localhost", 7777);
                     NetworkManager.Singleton.StartHost();
                     break;
                 case Socket.Client:
+                    NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("192.168.1.88", 7777);
                     NetworkManager.Singleton.StartClient();
                     break;
             }
