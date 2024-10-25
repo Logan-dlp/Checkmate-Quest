@@ -10,6 +10,8 @@ namespace Multiplayer
 
         private void Start()
         {
+            string ipAdress = _personalSocket.IpAdress;
+            
             switch (_personalSocket.PersonalSocketType)
             {
                 case Socket.Server:
@@ -20,7 +22,7 @@ namespace Multiplayer
                     NetworkManager.Singleton.StartHost();
                     break;
                 case Socket.Client:
-                    NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("192.168.1.88", 7777);
+                    NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(ipAdress, 7777);
                     NetworkManager.Singleton.StartClient();
                     break;
             }

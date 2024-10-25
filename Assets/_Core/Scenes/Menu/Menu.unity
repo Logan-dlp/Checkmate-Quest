@@ -1132,18 +1132,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1192150534}
-        m_TargetAssemblyTypeName: Multiplayer.ConfigUnityTransport, Assembly-CSharp
-        m_MethodName: SetIPAdress
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 0.0.0.0
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 888014745}
         m_TargetAssemblyTypeName: Display.ScenesController, Assembly-CSharp
         m_MethodName: LoadScene
@@ -1979,7 +1967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 332, y: -50}
+  m_AnchoredPosition: {x: 319.6, y: -50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071659424
@@ -2026,18 +2014,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1192150534}
-        m_TargetAssemblyTypeName: Multiplayer.ConfigUnityTransport, Assembly-CSharp
-        m_MethodName: SetIPAdress
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 390397656}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 192.168.1.88
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 888014745}
         m_TargetAssemblyTypeName: Display.ScenesController, Assembly-CSharp
         m_MethodName: LoadScene
@@ -2111,7 +2087,6 @@ GameObject:
   - component: {fileID: 1192150533}
   - component: {fileID: 1192150532}
   - component: {fileID: 1192150531}
-  - component: {fileID: 1192150534}
   m_Layer: 0
   m_Name: Network
   m_TagString: Untagged
@@ -2199,18 +2174,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1192150534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192150530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c8d0a9f82bbe64e82e1e8b147a2e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1270879045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,7 +2875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 164, y: -50}
+  m_AnchoredPosition: {x: 159.7, y: -50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1800533063
@@ -2994,7 +2957,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 0f7ffa62d9370084bac077bb325e417f, type: 2}
+        m_TargetAssemblyTypeName: Multiplayer.PersonalSocket, Assembly-CSharp
+        m_MethodName: set_IpAdress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3109,7 +3084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 192.168.1.1
+  m_text: 192.168.1.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a003132ac2d207748b3fe21a97eaea9a, type: 2}
   m_sharedMaterial: {fileID: 2243096495930640652, guid: a003132ac2d207748b3fe21a97eaea9a,
