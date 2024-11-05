@@ -1,4 +1,5 @@
 using System;
+using Chess;
 using Event;
 using Event.Listener;
 using Multiplayer;
@@ -53,14 +54,10 @@ namespace Player
             }
         }
 
-        private void Update()
-        {
-            _isMyTurnText.text = _isMyTurn.ToString();
-        }
-
         public void ToggleTurn()
         {
             _isMyTurn = !_isMyTurn;
+            _isMyTurnText.text = _isMyTurn.ToString();
         }
         
         public void PlayerClick()
@@ -69,8 +66,11 @@ namespace Player
             {
                 if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100))
                 {
-                    Destroy(hit.transform.gameObject);
-                    SendTurnRpc();
+                    if (hit.transform.TryGetComponent<IChessman>(out IChessman chessman))
+                    {
+                        chessman.MoveChessRpc();
+                        SendTurnRpc();
+                    }
                 }
             }
         }
