@@ -18,18 +18,9 @@ namespace Player
         [SerializeField] private TextMeshProUGUI _socketText;
         [SerializeField] private TextMeshProUGUI _playerEventText;
         [SerializeField] private TextMeshProUGUI _isMyTurnText;
-    
-        [Header("White Player")]
-        [SerializeField] private Vector3 _whitePlayerTransform;
-        [SerializeField] private LayerMask _whitePlayerCullingMask;
-        [SerializeField] private LayerMask _whitePlayerInteractingMask;
-        [SerializeField] private ActionEvent _whitePlayerEvent;
-    
-        [Header("Black Player")]
-        [SerializeField] private Vector3 _blackPlayerTransform;
-        [SerializeField] private LayerMask _blackPlayerCullingMask;
-        [SerializeField] private LayerMask _blackPlayerInteractingMask;
-        [SerializeField] private ActionEvent _blackPlayerEvent;
+        
+        [SerializeField] private PlayerChessVariable _whitePlayerVariable;
+        [SerializeField] private PlayerChessVariable _blackPlayerVariable;
 
         private Camera _mainCamera;
         private AChessman _currentChessman;
@@ -46,19 +37,20 @@ namespace Player
                 switch (_personalSocket.PersonalSocketType)
                 {
                     case Socket.Host:
-                        SetPositionRpc(_whitePlayerTransform);
-                        _mainCamera.cullingMask = _whitePlayerCullingMask;
-                        _currentInteractingMask = _whitePlayerInteractingMask;
-                        actionEventListener.SetEvent(_whitePlayerEvent);
+                        SetPositionRpc(_whitePlayerVariable._playerPosition);
+                        SetRotationRpc(_whitePlayerVariable._playerRotation);
+                        _mainCamera.cullingMask = _whitePlayerVariable._playerCullingMask;
+                        _currentInteractingMask = _whitePlayerVariable._playerInteractingMask;
+                        actionEventListener.SetEvent(_whitePlayerVariable._playerEvent);
                         _isMyTurn = true;
-                        
                         break;
                     case Socket.Client:
-                        SetPositionRpc(_blackPlayerTransform);
-                        _mainCamera.cullingMask = _blackPlayerCullingMask;
-                        _currentInteractingMask = _blackPlayerInteractingMask;
-                        actionEventListener.SetEvent(_blackPlayerEvent);
-                        _isMyTurn = false;
+                        SetPositionRpc(_blackPlayerVariable._playerPosition);
+                        SetRotationRpc(_blackPlayerVariable._playerRotation);
+                        _mainCamera.cullingMask = _blackPlayerVariable._playerCullingMask;
+                        _currentInteractingMask = _blackPlayerVariable._playerInteractingMask;
+                        actionEventListener.SetEvent(_blackPlayerVariable._playerEvent);
+                        _isMyTurn = true;
                         break;
                 }
 
@@ -127,12 +119,18 @@ namespace Player
         {
             transform.position = position;
         }
+
+        [Rpc(SendTo.ClientsAndHost)]
+        private void SetRotationRpc(Vector3 rotation)
+        {
+            transform.rotation = Quaternion.Euler(rotation);
+        }
         
         [Rpc(SendTo.ClientsAndHost)]
         private void SendTurnRpc()
         {
-            _whitePlayerEvent.InvokeEvent();
-            _blackPlayerEvent.InvokeEvent();
+            _whitePlayerVariable._playerEvent.InvokeEvent();
+            _blackPlayerVariable._playerEvent.InvokeEvent();
         }
     }
 }

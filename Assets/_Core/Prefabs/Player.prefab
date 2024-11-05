@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1033281614
+  GlobalObjectIdHash: 2563978526
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -764,22 +764,10 @@ MonoBehaviour:
   _socketText: {fileID: 2170272140906112010}
   _playerEventText: {fileID: 5274876331230589752}
   _isMyTurnText: {fileID: 9178951703335034446}
-  _whitePlayerTransform: {x: 2, y: 0, z: 0}
-  _whitePlayerCullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  _whitePlayerInteractingMask:
-    serializedVersion: 2
-    m_Bits: 119
-  _whitePlayerEvent: {fileID: 11400000, guid: 3e3c646c4372f7442addb4a7beeb759a, type: 2}
-  _blackPlayerTransform: {x: -2, y: 0, z: 0}
-  _blackPlayerCullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  _blackPlayerInteractingMask:
-    serializedVersion: 2
-    m_Bits: 183
-  _blackPlayerEvent: {fileID: 11400000, guid: fcbe41025a3dd0341b7c43ab571875cc, type: 2}
+  _whitePlayerVariable: {fileID: 11400000, guid: c20e23774c1527a4d947f4042c9be963,
+    type: 2}
+  _blackPlayerVariable: {fileID: 11400000, guid: 9df5b90a0d1e07640902056aa50ab889,
+    type: 2}
 --- !u!114 &8257015118212434385
 MonoBehaviour:
   m_ObjectHideFlags: 0
