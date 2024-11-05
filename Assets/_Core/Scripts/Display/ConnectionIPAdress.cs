@@ -1,4 +1,3 @@
-using System;
 using System.Net;
 using Multiplayer;
 using TMPro;
@@ -17,7 +16,7 @@ namespace Display
 
         private void DisplayIPV4Adress()
         {
-            IPAddress ipAddress = NetworkUtilities.GetLocalIPv4AddressRequiresInternet();
+            IPAddress ipAddress = NetworkUtilities.GetLocalIPv4Address();
             _ipV4AdressText.text = ipAddress.ToString();
         }
     }

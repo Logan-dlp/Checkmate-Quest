@@ -6,14 +6,13 @@ namespace Multiplayer
 {
     public static partial class NetworkUtilities
     {
-        public static IPAddress GetLocalIPv4AddressRequiresInternet()
+        public static IPAddress GetLocalIPv4Address()
         {
             var localIp = IPAddress.None;
             try
             {
                 using (var socket = new System.Net.Sockets.Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
                 {
-                    // Connect socket to Google's Public DNS service
                     socket.Connect("8.8.8.8", 65530);
                     if (!(socket.LocalEndPoint is IPEndPoint endPoint))
                     {
@@ -22,10 +21,7 @@ namespace Multiplayer
                     localIp = endPoint.Address;
                 }
             }
-            catch (SocketException)
-            {
-                // Handle exception
-            }
+            catch (SocketException) {}
 
             return localIp;
         }

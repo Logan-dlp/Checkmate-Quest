@@ -1,7 +1,6 @@
 using Unity.Netcode;
-using UnityEngine;
 
-namespace Chess
+namespace Chess.Chessman
 {
     public class Pawn : NetworkBehaviour, IChessman
     {
