@@ -31,7 +31,7 @@ namespace Player
         [SerializeField] private ActionEvent _blackPlayerEvent;
 
         private Camera _mainCamera;
-        private IChessman _currentChessman;
+        private AChessman _currentChessman;
         private LayerMask _currentInteractingMask;
         
         private bool _isMyTurn = false;
@@ -80,12 +80,31 @@ namespace Player
                 {
                     Vector3 targetDirection = Input.mousePosition + new Vector3(0, 0, 10);
                     targetDirection = _mainCamera.ScreenToWorldPoint(targetDirection);
-                
+                    
                     if (Physics.Raycast(transform.position, targetDirection - transform.position, out RaycastHit hit, int.MaxValue))
                     {
-                        if (hit.transform.TryGetComponent<IChessman>(out IChessman chessman) && _currentInteractingMask == (_currentInteractingMask | (1 << hit.transform.gameObject.layer)))
+                        if (hit.transform.TryGetComponent<AChessman>(out AChessman chessman) && _currentInteractingMask == (_currentInteractingMask | (1 << hit.transform.gameObject.layer)))
                         {
-                            _currentChessman = chessman.SelectChessman();
+                            if (_currentChessman != null)
+                            {
+                                if (_currentChessman != chessman)
+                                {
+                                    _currentChessman.UnselectChessman();
+                                    _currentChessman = chessman.SelectChessman();
+                                }
+                            }
+                            else
+                            {
+                                _currentChessman = chessman.SelectChessman();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (_currentChessman != null)
+                        {
+                            _currentChessman.UnselectChessman();
+                            _currentChessman = null;
                         }
                     }
                 }

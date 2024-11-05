@@ -3,18 +3,23 @@ using UnityEngine;
 
 namespace Chess.Chessman
 {
-    public class Pawn : NetworkBehaviour, IChessman
+    public class Pawn : AChessman
     {
-        public IChessman SelectChessman()
+        public override AChessman SelectChessman()
         {
-            Debug.Log("Tu m'as sélectionner !");
+            SetPositionRpc(transform.position + new Vector3(0, .5f, 0));
             return this;
         }
 
-        [Rpc(SendTo.ClientsAndHost)]
-        public void MoveChessRpc()
+        public override void UnselectChessman()
         {
-            transform.position += transform.right;
+            SetPositionRpc(transform.position - new Vector3(0, .5f, 0));
+        }
+
+        [Rpc(SendTo.ClientsAndHost)]
+        protected override void SetPositionRpc(Vector3 position)
+        {
+            transform.position = position;
         }
     }
 }

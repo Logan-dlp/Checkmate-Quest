@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Chess
 {
-    public abstract class IChessman : NetworkBehaviour
+    public abstract class AChessman : NetworkBehaviour
     {
-        public abstract IChessman SelectChessman();
+        public abstract AChessman SelectChessman();
         public abstract void UnselectChessman();
         protected abstract void SetPositionRpc(Vector3 position);
     }
