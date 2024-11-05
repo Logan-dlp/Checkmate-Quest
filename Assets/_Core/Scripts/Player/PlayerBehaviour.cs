@@ -6,12 +6,15 @@ using Multiplayer;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
     public class PlayerBehaviour : NetworkBehaviour
     {
         [SerializeField] private PersonalSocket _personalSocket;
+        
+        [Header("Debug")]
         [SerializeField] private TextMeshProUGUI _socketText;
         [SerializeField] private TextMeshProUGUI _playerEventText;
         [SerializeField] private TextMeshProUGUI _isMyTurnText;
@@ -27,22 +30,26 @@ namespace Player
         [SerializeField] private ActionEvent _blackPlayerEvent;
 
         private bool _isMyTurn = false;
-
+        private Camera _mainCamera;
+        private IChessman _currentChessman;
+        
         private void Start()
         {
+            _mainCamera = GetComponentInChildren<Camera>();
+            
             if (transform.TryGetComponent<ActionEventListener>(out ActionEventListener actionEventListener))
             {
                 switch (_personalSocket.PersonalSocketType)
                 {
                     case Socket.Host:
-                        transform.position = _whitePlayerTransform;
-                        transform.GetComponentInChildren<Camera>().cullingMask = _whitePlayerCullingMask;
+                        SetPositionRpc(_whitePlayerTransform);
+                        _mainCamera.cullingMask = _whitePlayerCullingMask;
                         actionEventListener.SetEvent(_whitePlayerEvent);
                         _isMyTurn = true;
                         break;
                     case Socket.Client:
-                        transform.position = _blackPlayerTransform;
-                        transform.GetComponentInChildren<Camera>().cullingMask = _blackPlayerCullingMask;
+                        SetPositionRpc(_blackPlayerTransform);
+                        _mainCamera.cullingMask = _blackPlayerCullingMask;
                         actionEventListener.SetEvent(_blackPlayerEvent);
                         _isMyTurn = false;
                         break;
@@ -60,19 +67,32 @@ namespace Player
             _isMyTurnText.text = _isMyTurn.ToString();
         }
         
-        public void PlayerClick()
+        public void OnClick(InputAction.CallbackContext _ctx)
         {
-            if (_isMyTurn)
+            if (_ctx.started)
             {
-                if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100))
+                if (_isMyTurn)
                 {
-                    if (hit.transform.TryGetComponent<IChessman>(out IChessman chessman))
+                    Vector3 targetDirection = Input.mousePosition + new Vector3(0, 0, 10);
+                    targetDirection = _mainCamera.ScreenToWorldPoint(targetDirection);
+                
+                    Debug.DrawRay(transform.position, targetDirection - transform.position, Color.red);
+                
+                    if (Physics.Raycast(transform.position, targetDirection - transform.position, out RaycastHit hit, 100))
                     {
-                        chessman.MoveChessRpc();
-                        SendTurnRpc();
+                        if (hit.transform.TryGetComponent<IChessman>(out IChessman chessman))
+                        {
+                            _currentChessman = chessman.SelectChessman();
+                        }
                     }
                 }
             }
+        }
+
+        [Rpc(SendTo.ClientsAndHost)]
+        private void SetPositionRpc(Vector3 position)
+        {
+            transform.position = position;
         }
         
         [Rpc(SendTo.ClientsAndHost)]

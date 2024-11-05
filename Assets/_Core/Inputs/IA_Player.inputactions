@@ -6,7 +6,7 @@
             "id": "95d3c316-3c2c-44ab-96a6-ce10d2098f37",
             "actions": [
                 {
-                    "name": "Space",
+                    "name": "Click",
                     "type": "Button",
                     "id": "68b4b87f-0ecf-42db-8014-b1c15716dc42",
                     "expectedControlType": "Button",
@@ -19,11 +19,11 @@
                 {
                     "name": "",
                     "id": "cebdb98c-7bb9-4629-85c6-b7eec3780c0b",
-                    "path": "<Keyboard>/space",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Space",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
