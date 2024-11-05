@@ -1,31 +1,29 @@
 using UnityEngine;
 using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 
 namespace Multiplayer
 {
     public class LoadPlayerSoket : MonoBehaviour
     {
         [SerializeField] private PersonalSocket _personalSocket;
-    
-        private static NetworkManager _networkManager;
 
-        private void Awake()
+        private void Start()
         {
-            _networkManager = FindObjectOfType<NetworkManager>();
-        }
-
-        private void OnEnable()
-        {
+            string ipAdress = _personalSocket.IpAdress;
+            
             switch (_personalSocket.PersonalSocketType)
             {
                 case Socket.Server:
-                    _networkManager.StartServer();
+                    NetworkManager.Singleton.StartServer();
                     break;
                 case Socket.Host:
-                    _networkManager.StartHost();
+                    NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("0.0.0.0", 7777);
+                    NetworkManager.Singleton.StartHost();
                     break;
                 case Socket.Client:
-                    _networkManager.StartClient();
+                    NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(ipAdress, 7777);
+                    NetworkManager.Singleton.StartClient();
                     break;
             }
         }
