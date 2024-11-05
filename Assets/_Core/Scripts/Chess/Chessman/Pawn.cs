@@ -5,7 +5,7 @@ namespace Chess.Chessman
 {
     public class Pawn : AChessman
     {
-        private Vector2 _positionInChessboard;
+        private Vector2 _positionInChessboard = Vector2.zero;
         
         public override AChessman SelectChessman()
         {

@@ -12,6 +12,5 @@ namespace Chess
         public abstract Vector2 GetPositionInChessboard();
         
         public abstract void SetPositionRpc(Vector3 position);
-        
     }
 }

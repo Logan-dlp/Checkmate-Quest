@@ -8,6 +8,7 @@ namespace Chess.Chessboard
         public Vector2 CasePosition => _casePosition;
         
         private AChessman _currentChessman;
+        public AChessman CurrentChessman => _currentChessman;
 
         private void Start()
         {
@@ -15,20 +16,18 @@ namespace Chess.Chessboard
             {
                 if (hit.transform.TryGetComponent<AChessman>(out AChessman chessman))
                 {
-                    SetChessmanInCase(chessman);
+                    _currentChessman = chessman;
+                    _currentChessman.SetPositionInChessboard(_casePosition);
+                    _currentChessman.SetPositionRpc(transform.position + new Vector3(0, .5f, 0));
                 }
             }
         }
 
         public void SetChessmanInCase(AChessman chessman)
         {
-            if (_currentChessman != null)
-            {
-                Destroy(_currentChessman.gameObject);
-            }
             _currentChessman = chessman;
             _currentChessman.SetPositionInChessboard(_casePosition);
-            _currentChessman.SetPositionRpc(transform.position + new Vector3(0, 0.5f, 0));
+            _currentChessman.SetPositionRpc(transform.position + new Vector3(0, 1, 0));
         }
     }
 }

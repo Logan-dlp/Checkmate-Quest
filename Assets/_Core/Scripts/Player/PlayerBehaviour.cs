@@ -1,4 +1,5 @@
 using Chess;
+using Chess.Chessboard;
 using Event;
 using Event.Listener;
 using Multiplayer;
@@ -50,6 +51,7 @@ namespace Player
                         _currentInteractingMask = _whitePlayerInteractingMask;
                         actionEventListener.SetEvent(_whitePlayerEvent);
                         _isMyTurn = true;
+                        
                         break;
                     case Socket.Client:
                         SetPositionRpc(_blackPlayerTransform);
@@ -96,6 +98,15 @@ namespace Player
                             else
                             {
                                 _currentChessman = chessman.SelectChessman();
+                            }
+                        }
+                        else if (_currentChessman != null)
+                        {
+                            if (hit.transform.TryGetComponent<ChessboardCase>(out ChessboardCase chessboardCase))
+                            {
+                                chessboardCase.SetChessmanInCase(_currentChessman);
+                                _currentChessman.UnselectChessman();
+                                _currentChessman = null;
                             }
                         }
                     }
