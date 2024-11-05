@@ -7,6 +7,11 @@ namespace Chess
     {
         public abstract AChessman SelectChessman();
         public abstract void UnselectChessman();
-        protected abstract void SetPositionRpc(Vector3 position);
+
+        public abstract void SetPositionInChessboard(Vector2 position);
+        public abstract Vector2 GetPositionInChessboard();
+        
+        public abstract void SetPositionRpc(Vector3 position);
+        
     }
 }
