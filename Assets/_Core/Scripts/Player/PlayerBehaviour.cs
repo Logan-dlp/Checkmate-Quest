@@ -1,4 +1,3 @@
-using System;
 using Chess;
 using Event;
 using Event.Listener;
@@ -22,16 +21,20 @@ namespace Player
         [Header("White Player")]
         [SerializeField] private Vector3 _whitePlayerTransform;
         [SerializeField] private LayerMask _whitePlayerCullingMask;
+        [SerializeField] private LayerMask _whitePlayerInteractingMask;
         [SerializeField] private ActionEvent _whitePlayerEvent;
     
         [Header("Black Player")]
         [SerializeField] private Vector3 _blackPlayerTransform;
         [SerializeField] private LayerMask _blackPlayerCullingMask;
+        [SerializeField] private LayerMask _blackPlayerInteractingMask;
         [SerializeField] private ActionEvent _blackPlayerEvent;
 
-        private bool _isMyTurn = false;
         private Camera _mainCamera;
         private IChessman _currentChessman;
+        private LayerMask _currentInteractingMask;
+        
+        private bool _isMyTurn = false;
         
         private void Start()
         {
@@ -44,12 +47,14 @@ namespace Player
                     case Socket.Host:
                         SetPositionRpc(_whitePlayerTransform);
                         _mainCamera.cullingMask = _whitePlayerCullingMask;
+                        _currentInteractingMask = _whitePlayerInteractingMask;
                         actionEventListener.SetEvent(_whitePlayerEvent);
                         _isMyTurn = true;
                         break;
                     case Socket.Client:
                         SetPositionRpc(_blackPlayerTransform);
                         _mainCamera.cullingMask = _blackPlayerCullingMask;
+                        _currentInteractingMask = _blackPlayerInteractingMask;
                         actionEventListener.SetEvent(_blackPlayerEvent);
                         _isMyTurn = false;
                         break;
@@ -76,11 +81,9 @@ namespace Player
                     Vector3 targetDirection = Input.mousePosition + new Vector3(0, 0, 10);
                     targetDirection = _mainCamera.ScreenToWorldPoint(targetDirection);
                 
-                    Debug.DrawRay(transform.position, targetDirection - transform.position, Color.red);
-                
-                    if (Physics.Raycast(transform.position, targetDirection - transform.position, out RaycastHit hit, 100))
+                    if (Physics.Raycast(transform.position, targetDirection - transform.position, out RaycastHit hit, int.MaxValue))
                     {
-                        if (hit.transform.TryGetComponent<IChessman>(out IChessman chessman))
+                        if (hit.transform.TryGetComponent<IChessman>(out IChessman chessman) && _currentInteractingMask == (_currentInteractingMask | (1 << hit.transform.gameObject.layer)))
                         {
                             _currentChessman = chessman.SelectChessman();
                         }
