@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa59381657d4c7447a1319a43a027b9e, type: 3}
   m_Name: BlackChessVariable
   m_EditorClassIdentifier: 
-  _playerTransform: {fileID: 0}
+  _playerPosition: {x: 3.140815, y: 5.750819, z: 8.475157}
+  _playerRotation: {x: 49.883, y: -179.931, z: 0}
   _playerCullingMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 4294967295
   _playerInteractingMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 4294967295
   _playerEvent: {fileID: 11400000, guid: fcbe41025a3dd0341b7c43ab571875cc, type: 2}
