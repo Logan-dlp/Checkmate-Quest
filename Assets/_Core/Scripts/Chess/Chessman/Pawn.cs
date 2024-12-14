@@ -28,7 +28,7 @@ namespace Chess.Chessman
             return _positionInChessboard;
         }
 
-        [Rpc(SendTo.ClientsAndHost)]
+        [Rpc(SendTo.Everyone)]
         public override void SetPositionRpc(Vector3 position)
         {
             transform.position = position;

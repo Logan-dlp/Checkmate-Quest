@@ -114,19 +114,19 @@ namespace Player
             }
         }
 
-        [Rpc(SendTo.ClientsAndHost)]
+        [Rpc(SendTo.Everyone)]
         private void SetPositionRpc(Vector3 position)
         {
             transform.position = position;
         }
 
-        [Rpc(SendTo.ClientsAndHost)]
+        [Rpc(SendTo.Everyone)]
         private void SetRotationRpc(Vector3 rotation)
         {
             transform.rotation = Quaternion.Euler(rotation);
         }
         
-        [Rpc(SendTo.ClientsAndHost)]
+        [Rpc(SendTo.Everyone)]
         private void SendTurnRpc()
         {
             _whitePlayerVariable._playerEvent.InvokeEvent();
