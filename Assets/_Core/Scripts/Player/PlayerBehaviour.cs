@@ -37,16 +37,16 @@ namespace Player
                 switch (_personalSocket.PersonalSocketType)
                 {
                     case Socket.Host:
-                        SetPositionRpc(_whitePlayerVariable._playerPosition);
-                        SetRotationRpc(_whitePlayerVariable._playerRotation);
+                        transform.position = _whitePlayerVariable._playerPosition;
+                        transform.rotation = Quaternion.Euler(_whitePlayerVariable._playerRotation);
                         _mainCamera.cullingMask = _whitePlayerVariable._playerCullingMask;
                         _currentInteractingMask = _whitePlayerVariable._playerInteractingMask;
                         actionEventListener.SetEvent(_whitePlayerVariable._playerEvent);
                         _isMyTurn = true;
                         break;
                     case Socket.Client:
-                        SetPositionRpc(_blackPlayerVariable._playerPosition);
-                        SetRotationRpc(_blackPlayerVariable._playerRotation);
+                        transform.position = _blackPlayerVariable._playerPosition;
+                        transform.rotation = Quaternion.Euler(_blackPlayerVariable._playerRotation);
                         _mainCamera.cullingMask = _blackPlayerVariable._playerCullingMask;
                         _currentInteractingMask = _blackPlayerVariable._playerInteractingMask;
                         actionEventListener.SetEvent(_blackPlayerVariable._playerEvent);
