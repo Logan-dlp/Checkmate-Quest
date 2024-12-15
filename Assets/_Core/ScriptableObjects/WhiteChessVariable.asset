@@ -19,5 +19,5 @@ MonoBehaviour:
     m_Bits: 4294967295
   _playerInteractingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   _playerEvent: {fileID: 11400000, guid: 3e3c646c4372f7442addb4a7beeb759a, type: 2}

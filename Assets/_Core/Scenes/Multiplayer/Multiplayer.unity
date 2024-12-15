@@ -8315,7 +8315,7 @@ GameObject:
   - component: {fileID: 3220056800513627972}
   - component: {fileID: 8792001652494217254}
   - component: {fileID: 5518830434773860488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8336,7 +8336,7 @@ GameObject:
   - component: {fileID: 3220056800517900556}
   - component: {fileID: 8792001652498493038}
   - component: {fileID: 5518830434769624768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8357,7 +8357,7 @@ GameObject:
   - component: {fileID: 3220056800526957637}
   - component: {fileID: 8792001652491016999}
   - component: {fileID: 5518830434777099145}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8378,7 +8378,7 @@ GameObject:
   - component: {fileID: 3220056800062042178}
   - component: {fileID: 8792001653187663648}
   - component: {fileID: 5518830435225495438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8399,7 +8399,7 @@ GameObject:
   - component: {fileID: 3220056800082840266}
   - component: {fileID: 8792001653191896488}
   - component: {fileID: 5518830435221200134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8420,7 +8420,7 @@ GameObject:
   - component: {fileID: 3220056800087074666}
   - component: {fileID: 8792001653196177416}
   - component: {fileID: 5518830435216978086}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8441,7 +8441,7 @@ GameObject:
   - component: {fileID: 3220056798692684103}
   - component: {fileID: 8792001652401509925}
   - component: {fileID: 5518830433926981259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8462,7 +8462,7 @@ GameObject:
   - component: {fileID: 3220056798697267031}
   - component: {fileID: 8792001652405844021}
   - component: {fileID: 5518830433922648219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pawn White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10001,7 +10001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3898069477
+  GlobalObjectIdHash: 2259737062
   InScenePlacedSourceGlobalObjectIdHash: 2645543527
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10022,7 +10022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3896490291
+  GlobalObjectIdHash: 168459778
   InScenePlacedSourceGlobalObjectIdHash: 2645543527
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10043,7 +10043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3209969064
+  GlobalObjectIdHash: 386082568
   InScenePlacedSourceGlobalObjectIdHash: 2645543527
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10064,7 +10064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3616280861
+  GlobalObjectIdHash: 899879770
   InScenePlacedSourceGlobalObjectIdHash: 2645543527
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10085,7 +10085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2750218710
+  GlobalObjectIdHash: 1474712086
   InScenePlacedSourceGlobalObjectIdHash: 2645543527
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10106,7 +10106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 509932534
+  GlobalObjectIdHash: 2202407446
   InScenePlacedSourceGlobalObjectIdHash: 2645543527
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10127,7 +10127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2657266855
+  GlobalObjectIdHash: 2334483673
   InScenePlacedSourceGlobalObjectIdHash: 2645543527
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10148,7 +10148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 251372000
+  GlobalObjectIdHash: 3068305138
   InScenePlacedSourceGlobalObjectIdHash: 2645543527
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10171,7 +10171,7 @@ GameObject:
   - component: {fileID: 5322070082314185050}
   - component: {fileID: 8080306746597204369}
   - component: {fileID: 6522582172606307286}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pawn Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10192,7 +10192,7 @@ GameObject:
   - component: {fileID: 5322070082171991061}
   - component: {fileID: 8080306746151943390}
   - component: {fileID: 6522582172798600857}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pawn Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10213,7 +10213,7 @@ GameObject:
   - component: {fileID: 5322070082162434246}
   - component: {fileID: 8080306746142943245}
   - component: {fileID: 6522582172789510730}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pawn Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10234,7 +10234,7 @@ GameObject:
   - component: {fileID: 5322070082892622777}
   - component: {fileID: 8080306745966076786}
   - component: {fileID: 6522582173116062005}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pawn Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10255,7 +10255,7 @@ GameObject:
   - component: {fileID: 5322070081267535015}
   - component: {fileID: 8080306747662910572}
   - component: {fileID: 6522582173701324331}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pawn Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10276,7 +10276,7 @@ GameObject:
   - component: {fileID: 5322070081104575247}
   - component: {fileID: 8080306747232007108}
   - component: {fileID: 6522582173866019203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pawn Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10297,7 +10297,7 @@ GameObject:
   - component: {fileID: 5322070081090764228}
   - component: {fileID: 8080306747218752783}
   - component: {fileID: 6522582173861187400}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pawn Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10318,7 +10318,7 @@ GameObject:
   - component: {fileID: 5322070081813192704}
   - component: {fileID: 8080306747035216075}
   - component: {fileID: 6522582174180905612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pawn Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10337,7 +10337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3620453695
+  GlobalObjectIdHash: 1623764848
   InScenePlacedSourceGlobalObjectIdHash: 2818473632
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10358,7 +10358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1272493528
+  GlobalObjectIdHash: 1980370230
   InScenePlacedSourceGlobalObjectIdHash: 2818473632
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10379,7 +10379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1972182161
+  GlobalObjectIdHash: 613127953
   InScenePlacedSourceGlobalObjectIdHash: 2818473632
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10400,7 +10400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3668409278
+  GlobalObjectIdHash: 2838448565
   InScenePlacedSourceGlobalObjectIdHash: 2818473632
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10421,7 +10421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2484782842
+  GlobalObjectIdHash: 3023585513
   InScenePlacedSourceGlobalObjectIdHash: 2818473632
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10442,7 +10442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 541782626
+  GlobalObjectIdHash: 4062558346
   InScenePlacedSourceGlobalObjectIdHash: 2818473632
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10463,7 +10463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 493581087
+  GlobalObjectIdHash: 3522252697
   InScenePlacedSourceGlobalObjectIdHash: 2818473632
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -10484,7 +10484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4091614842
+  GlobalObjectIdHash: 3763625209
   InScenePlacedSourceGlobalObjectIdHash: 2818473632
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
