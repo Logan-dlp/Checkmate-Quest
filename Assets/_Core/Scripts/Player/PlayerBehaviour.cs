@@ -112,6 +112,10 @@ namespace Player
                         }
                     }
                 }
+                else if (_currentChessman != null)
+                {
+                    _currentChessman = null;
+                }
             }
         }
         
