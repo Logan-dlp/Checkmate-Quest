@@ -50,7 +50,7 @@ namespace Player
                         _mainCamera.cullingMask = _blackPlayerVariable._playerCullingMask;
                         _currentInteractingMask = _blackPlayerVariable._playerInteractingMask;
                         actionEventListener.SetEvent(_blackPlayerVariable._playerEvent);
-                        _isMyTurn = true;
+                        _isMyTurn = false;
                         break;
                 }
 
@@ -99,6 +99,7 @@ namespace Player
                                 chessboardCase.SetChessmanInCase(_currentChessman);
                                 _currentChessman.UnselectChessman();
                                 _currentChessman = null;
+                                SendTurnRpc();
                             }
                         }
                     }
@@ -112,18 +113,6 @@ namespace Player
                     }
                 }
             }
-        }
-
-        [Rpc(SendTo.Everyone)]
-        private void SetPositionRpc(Vector3 position)
-        {
-            transform.position = position;
-        }
-
-        [Rpc(SendTo.Everyone)]
-        private void SetRotationRpc(Vector3 rotation)
-        {
-            transform.rotation = Quaternion.Euler(rotation);
         }
         
         [Rpc(SendTo.Everyone)]
